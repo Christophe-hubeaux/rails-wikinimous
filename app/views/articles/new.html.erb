@@ -1,0 +1,29 @@
+<nav class="navbar sticky-top navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Wikinimous</a>
+    <a class="navbar-rigth" href="#"><%= link_to "New article", new_article_path %></a>
+  </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <%= form_with model: @article do |f| %>
+
+            <div class="mb-3">
+                <%= f.label :title, class: "form-label fs-5" %>
+                <%= f.text_field :title, class: "form-control" %>
+            </div>
+            <div class="mb-3">
+                <%= f.label :content, class: "form-label fs-5" %>
+                <%= f.text_field :content, class: "form-control" %>
+            </div>
+            <div class="mb-3">
+                <%= f.submit %>
+            </div>
+            <% end %>
+        </div>
+    </div>
+    <%= link_to articles_path do %>
+    <button type="button" class="btn btn-primary">Back</button>
+    <% end %>
+</div>

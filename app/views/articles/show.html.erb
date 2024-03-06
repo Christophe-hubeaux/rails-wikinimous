@@ -1,0 +1,26 @@
+<nav class="navbar sticky-top navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Wikinimous</a>
+  </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <h1 class="d-flex align-item-center mt-5 pb-4 border-bottom"><%= @article.title %>
+                <small class="ps-3">
+                    <%= link_to edit_article_path(@article) do %>
+                        <i class="fa fa-pencil"></i>
+                    <% end %>
+                    <%= link_to article_delete_path(@article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }  do %>
+                        <i class="fa-regular fa-trash-can"></i>
+                    <% end %>
+                </small>
+            </h1>
+            <p><%= @article.content %></p>
+            <%= link_to articles_path do %>
+            <button type="button" class="btn btn-primary">Back</button>
+            <% end %>
+        </div>
+    </div>
+</div>
+
